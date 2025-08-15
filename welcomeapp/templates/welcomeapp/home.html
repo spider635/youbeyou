@@ -1,0 +1,32 @@
+{% load static %}
+<!-- 加载static标签库 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <!-- 引入CSS文件 -->
+    <link rel="stylesheet" href="{% static 'welcomeapp/css/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>{{ message }}</h1>
+
+      <ul>
+        {% for item in items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+
+      <p>当前时间: {% now "Y-m-d H:i:s" %}</p>
+
+      <!-- 添加一个交互按钮 -->
+      <button class="interactive-btn button">点击我</button>
+
+      <a href="{% url 'hello' %}" class="button">前往Hello页面</a>
+    </div>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="{% static 'welcomeapp/js/script.js' %}"></script>
+  </body>
+</html>

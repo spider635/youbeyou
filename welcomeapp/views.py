@@ -14,4 +14,4 @@ def home(request):
         "message": "这是我的第一个Django模板页面!",
         "items": ["苹果", "香蕉", "橙子"],
     }
-    return render(request, "myapp/home.html", context)
+    return render(request, "welcomeapp/home.html", context)
